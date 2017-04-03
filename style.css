@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.428571429;
+    color: #333333;
+    background-color: #555;
+}
+#currentMessage{
+	width: 75%;
+}
+#banner{
+	height:60px;
+	padding-left: 15px;
+	background-color: #fff;
+}
+#underBanner{
+	padding-top:15px;
+	padding-left:15px;
+	bottom: 0px;
+}
+#mockTablet{ 
+	width:1028px;
+	height: 768px;	
+	background: #ebebeb;
+}
+/*method of centering cropped images provided by stack overflow*/
+.imageDiv {
+  width: 200px;
+  height: 300px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+@media (max-width : 1024px ){
+}
