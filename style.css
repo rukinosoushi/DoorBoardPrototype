@@ -8,7 +8,9 @@ body{
     background-color: #555;
 }
 #currentMessage{
+	margin-top:140px;
 	width: 75%;
+	float: left;
 }
 #banner{
 	height:60px;
@@ -18,12 +20,17 @@ body{
 #underBanner{
 	padding-top:15px;
 	padding-left:15px;
+	padding-right:15px;
 	bottom: 0px;
 }
 #mockTablet{ 
 	width:1028px;
 	height: 768px;	
 	background: #ebebeb;
+}
+#calendar{
+	float:right;
+	width:75%;
 }
 /*method of centering cropped images provided by stack overflow*/
 .imageDiv {
@@ -32,6 +39,7 @@ body{
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
+	float:left;
 }
 
 @media (max-width : 1024px ){
