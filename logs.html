@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+<link href="style.css" rel="stylesheet" type="text/css">
+<!-- Not sure how to include style properly -->
+	<TITLE> Log Table </TITLE>
+	<SCRIPT language="javascript">
+		function addRow(tableID) {
+			/*Going to add another parameter to dynamically change what the notification says*/
+
+			var table = document.getElementById(tableID);
+
+			var rowCount = table.rows.length;
+			var row = table.insertRow(rowCount);
+
+			var cell1 = row.insertCell(0);
+			var element1 = document.createElement("input");
+			element1.type = "checkbox";
+			element1.name="chkbox[]";
+			cell1.appendChild(element1);
+			cell1.style.width = "20px";
+
+			
+
+			var cell2 = row.insertCell(1);
+			cell2.style.backgroundColor = "white"
+			var element2 = document.createTextNode("Random Notifications");
+			element2.type = "text";
+			element2.name = "txtbox[]";
+			cell2.appendChild(element2);
+			cell2.style.width = "330px";
+
+		}
+
+		function deleteRow(tableID) {
+			try {
+			var table = document.getElementById(tableID);
+			var rowCount = table.rows.length;
+
+			for(var i=0; i<rowCount; i++) {
+				var row = table.rows[i];
+				var chkbox = row.cells[0].childNodes[0];
+				if(null != chkbox && true == chkbox.checked) {
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+
+
+			}
+			}catch(e) {
+				alert(e);
+			}
+		}
+
+		function deleteAll(tableID) {
+			try {
+			var table = document.getElementById(tableID);
+			var rowCount = table.rows.length;
+
+			for(var i=0; i<rowCount; i++) {
+				var row = table.rows[i];
+				var chkbox = row.cells[0].childNodes[0];
+				if(null != chkbox) {
+					table.deleteRow(i);
+					rowCount--;
+					i--;
+				}
+			}
+			var header = table.createTHead();
+    		var row = header.insertRow(0);
+    		var cell = row.insertCell(0);
+    		cell.colSpan = "2"
+    		cell.style.backgroundColor = "white"
+    		cell.innerHTML = "<b>Recent Notifications</b>";
+			}catch(e) {
+				alert(e);
+			}
+		}
+
+	</SCRIPT>
+</HEAD>
+<BODY>
+
+	<TABLE id="dataTable" width="350px" border="1">
+		<TH style = "background-color:white" colspan = "2"> Recent Notifications </TH>
+			<TBODY>
+				<TR>
+					<TD></TD>
+					<!-- <TD><INPUT type="checkbox" name="chk"/></TD>
+					
+					<TD> <INPUT type="text" /> </TD> -->
+				</TR>
+			</TBODY>
+	</TABLE>
+
+	<INPUT type="button" value="Add Row" onclick="addRow('dataTable')" />
+
+	<INPUT type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
+
+	<INPUT type="button" value="Delete All" onclick="deleteAll('dataTable')" />
+
+</BODY>
+</HTML>
