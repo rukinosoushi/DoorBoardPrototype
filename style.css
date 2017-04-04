@@ -12,10 +12,17 @@ body{
 	width: 75%;
 	float: left;
 }
+#presetPhrase{
+	margin-top:20px;
+	width: 75%;
+	float: left;
+}
 #banner{
 	height:60px;
 	padding-left: 15px;
 	background-color: #fff;
+	color:#f22;
+	font-size: 30px;
 }
 #underBanner{
 	padding-top:15px;
@@ -31,6 +38,14 @@ body{
 #calendar{
 	float:right;
 	width:75%;
+}
+#textbox{
+	float:right;
+}
+#IdentityVerification{
+	margin-top: 20px;
+	padding-top:160px;
+	text-align: center;
 }
 /*method of centering cropped images provided by stack overflow*/
 .imageDiv {
