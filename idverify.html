@@ -7,9 +7,9 @@
 </head>
 <script language="javascript">
   function check(){
-  	if(id_verify.email.value == ""){
-  		alert("Please fill in your email address or swipe your ID card.");
-  		id_verify.email.focus();
+  	if(id_verify.uid.value == ""){
+  		alert("Please swipe your ID card.");
+  		id_verify.uid.focus();
   		return false;
   	}
   }
@@ -18,11 +18,12 @@
 <body>
 <form name="id_verify" action="msgsent.html" method="post">
 	<section id = "mockTablet">
-	  <section id= "IdentityVerification" style="vertical-align: text-bottom;">
+	  <section id= "IdentityVerification" style="padding-top:200px;text-align:center;">
 	    <h1 style = "color:#2AF946;">One more step to go</h1>
-	    <p>Swipe your ID card or type in your email address below.</p>
-	    <input id="email" type="text" required/>
-	    <button class="submitButton" type="submit" onclick="return check()">Send</button>
+	    <p>Swipe your ID card and tap Finish when uid appear in the follow box.</p>
+	    <p>(For there is no card reader in this prototype, please input uid by keyboard)</p>
+	    <input id="uid" type="text" required/>
+	    <button class="submitButton" type="submit" onclick="return check()">Finish</button>
 	  </section>
 	</section>
 
