@@ -159,5 +159,18 @@ body{
 	left:58%;border-radius:12px;
 }
 
+#scheduleSection{
+	float:left;
+}
+.timeSlot{
+	float:left;
+	margin-right:50px;
+}
+#btnCreateEvents{
+
+	float:left;
+	padding: 5px;
+	margin-right: 5px;
+}
 @media (max-width : 1024px ){
 }
