@@ -8,21 +8,18 @@ body{
     background-color: #555;
 }
 #currentMessage{
-	margin-top:140px;
-	width: 75%;
-	float: left;
-}
-#presetPhrase{
-	margin-top:20px;
-	width: 75%;
-	float: left;
+	position: absolute;
+	width: 930px;
+	top: 550px;
+	left: 50px;
+	height: 210px;
+	background-color: #fff;
+	padding: 13px;
 }
 #banner{
 	height:60px;
 	padding-left: 15px;
 	background-color: #fff;
-	color:#f22;
-	font-size: 30px;
 }
 #underBanner{
 	padding-top:15px;
@@ -37,16 +34,76 @@ body{
 }
 #calendar{
 	float:right;
-	width:75%;
+	width:760px;
 }
-#textbox{
-	float:right;
-}
-#IdentityVerification{
-	margin-top: 20px;
-	padding-top:160px;
+#info{
+	position: absolute;
+	top: 420px;
+	left: 0px;
+	width: 250px;
 	text-align: center;
 }
+#infoSetting{
+	position: absolute;
+	top: 435px;
+	left: 30px;
+	text-align: center;
+}
+#photoSetting{
+	position: absolute;
+	top: 410px;
+	left: 20px;
+}
+
+#below{
+	position: absolute;
+	top: 510px;
+	left: 20px;
+}
+
+.toolbar{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 90px;
+	background-color: #333;
+}
+.toolbar span .tooltiptext{
+	visibility: hidden;
+	width: 100px;
+	height: 73px;
+	background-color: #1a1a1a;
+	color: #fff;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 73px;
+	padding: 5px 0;
+	border: 6px;
+	position: absolute;
+	z-index: 1;
+	right: 100%;
+	top: -16px;
+	font-size: 16px;
+}
+.toolbar #save .tooltiptext{
+	width: 140px;
+}
+.toolbar span{
+	display: block;
+	text-align: center;
+	padding: 16px;
+	color: white;
+	font-size: 36px;
+	position: relative;
+}
+.toolbar span:hover{
+	background-color: #000;
+}
+.toolbar span:hover .tooltiptext{
+	visibility: visible;
+}
+
+
 /*method of centering cropped images provided by stack overflow*/
 .imageDiv {
   width: 200px;
@@ -54,24 +111,7 @@ body{
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
-	float:left;
-}
-
-/*a button style provided by bootstrapbay.com*/
-.submitButton {
-	background: #428BCA;
-	color: #fff;
-	font-family: Sans-serif;
-	font-size: 20px;
-	height: 60px;
-	width: 150px;
-	line-height: 60px;
-	margin: 25px 25px;
-	text-align: center;
-	border: 0;
-	transition: all 0.3s ease;
-	position:absolute;top:82%;
-		left:58%;border-radius:12px;
+  float:left;
 }
 
 @media (max-width : 1024px ){
