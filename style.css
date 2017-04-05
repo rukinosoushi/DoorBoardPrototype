@@ -57,8 +57,37 @@ body{
 
 #below{
 	position: absolute;
-	top: 510px;
-	left: 20px;
+	top: 420px;
+	left: 220px;
+}
+#below span{
+	float: left;
+	margin-left: 150px;
+	display: block;
+	text-align: center;
+	padding: 10px;
+	color: white;
+	font-size: 20px;
+	background-color: #b3b3b3;
+}
+#below span:hover{
+	background-color: #333;
+}
+
+#belowUnclickable{
+	position: absolute;
+	top: 420px;
+	left: 220px;
+}
+#belowUnclickable span{
+	float: left;
+	margin-left: 150px;
+	display: block;
+	text-align: center;
+	padding: 10px;
+	color: white;
+	font-size: 20px;
+	background-color: #b3b3b3;
 }
 
 .toolbar{
@@ -103,7 +132,6 @@ body{
 	visibility: visible;
 }
 
-
 /*method of centering cropped images provided by stack overflow*/
 .imageDiv {
   width: 200px;
@@ -128,7 +156,8 @@ body{
 	border: 0;
 	transition: all 0.3s ease;
 	position:absolute;top:82%;
-		left:58%;border-radius:12px;
+	left:58%;border-radius:12px;
+}
 
 @media (max-width : 1024px ){
 }
