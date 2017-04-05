@@ -32,6 +32,10 @@ function init(data){
 	} else {
 		document.getElementById("profilePhoto").style.backgroundImage = "url(" + localStorage.getItem("pPhoto") + ")";
 	}
+
+	if (localStorage.getItem("messageNum") === null){
+        localStorage.setItem("messageNum", 1);
+      }
 }
 
 
@@ -41,6 +45,8 @@ function restoreData(){
 	init(json);
 	})
 }
+
+
 
 
 document.addEventListener("DOMContentLoaded", restoreData);
