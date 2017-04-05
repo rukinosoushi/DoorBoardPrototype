@@ -125,13 +125,18 @@ body{
 	font-size: 36px;
 	position: relative;
 }
+
 .toolbar span:hover{
 	background-color: #000;
 }
 .toolbar span:hover .tooltiptext{
 	visibility: visible;
 }
-
+#backBoard{
+	position: absolute;
+	top: 28px;
+	left: 1020px;
+}
 /*method of centering cropped images provided by stack overflow*/
 .imageDiv {
   width: 200px;
@@ -159,18 +164,5 @@ body{
 	left:58%;border-radius:12px;
 }
 
-#scheduleSection{
-	float:left;
-}
-.timeSlot{
-	float:left;
-	margin-right:50px;
-}
-#btnCreateEvents{
-
-	float:left;
-	padding: 5px;
-	margin-right: 5px;
-}
 @media (max-width : 1024px ){
 }
