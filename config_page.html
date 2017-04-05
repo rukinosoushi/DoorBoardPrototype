@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Managing your message board</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link rel= "stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<section id = "mockTablet">
+	<section id = "banner"><p style = "color:#f22; font-size: 30px">Room 4132</p></section>
+ 	<section id = "underBanner">
+  	<div class="imageDiv" id= "profilePhoto"> </div>
+  	<iframe id="calendar" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23c0c0c0&amp;src=0ouj56vsdv2h2bu9ree86op3kc%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FNew_York" style="border-width:0" width="600" height="300" frameborder="0" scrolling="no"></iframe>
+  </section>
+  <label id = "photoSetting" style = "font-size: 13px">Change photo<input type = "file" id = "pPhoto" accept = "image/*"></label><br>
+   	<div id = "infoSetting">
+  		<form>
+  			<lable>Name:<input type = "text" id = "pName"></lable><br>
+  			<lable>Phone:<input type = "text" id = "pPhone"></lable><br>
+  			<lable>E-mail:<input type = "text" id = "pMail"></lable><br>
+  		</form>
+  	</div>
+
+  	<section id="below">
+  		<button type="button" disabled>Schedule a meeting</button>
+  		<button type="button" disabled>Create message</button>
+  	</section>
+  	<section id= "currentMessage">
+  	<h1 style = "color:#f22;">Notice: </h1>
+  		<p style="text-indent: 5em;">To all people planning on meeting me for open office hours, I am currently out for lunch and will be back in about 5 minutes. Further more, don't forget to come to <a href="google.com"> my presentation at 5pm </a> that talks about why I hate staying up.</p>
+  	</section>
+</section>
+<div class = "toolbar" id = "configBar">
+	<span id = "save">		
+		<p class = "tooltiptext">Save changes</p>
+		<i class = "fa fa-save"></i>
+	</span>
+	<span id = "reset">
+		<p class = "tooltiptext">Reset</p>
+		<i class = "fa fa-refresh"></i>
+	</span>
+	<span id = "message" onclick = "window.location.href='logs.html'">
+		<p class = "tooltiptext">Messages</p>
+		<i class = "fa fa-commenting-o"></i>
+	</span>
+</div>
+<script src="config_page.js"></script>
+</body>
+</html>

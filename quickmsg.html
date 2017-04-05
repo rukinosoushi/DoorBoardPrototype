@@ -8,11 +8,17 @@
   function add(elementID){
    quick_msg.message.value = quick_msg.message.value+document.getElementById(elementID).value;
   }
+  function submit(){
+    var message_num = localStorage.getItem("messageNum");
+    var message_index = "message_" + message_num;
+    localStorage.setItem(message_index, quick_msg.message.value);
+    localStorage.messageNum = Number(localStorage.messageNum)+1
+  }
 </script>
 </head>  
 
 <body>
-<form name="quick_msg" action="idverify.html" method="post">
+<form name="quick_msg" action="idverify.html" method = "">
   <section id = "mockTablet">
   	<section id = "banner">
       <p>Room 4132 : Professor Name
@@ -40,7 +46,7 @@
         </ul>
 
         <input style="background:#EF0F0B;color:#fff;font-family:Sans-serif;font-size:20px;text-align:center;border:0;transition:all 0.3s ease;border-radius:12px;" type="reset" value="Reset">
-        <button class="submitButton" type="submit">Send</button>
+        <button class="submitButton" type="submit" onclick= "submit()">Send</button>
     	</section>
         
     	</section>
