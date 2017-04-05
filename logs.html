@@ -4,7 +4,7 @@
 <!-- Not sure how to include style properly -->
 	<TITLE> Log Table </TITLE>
 	<SCRIPT language="javascript">
-		function addRow(tableID) {
+		function addRow(tableID, message) {
 			/*Going to add another parameter to dynamically change what the notification says*/
 
 			var table = document.getElementById(tableID);
@@ -23,11 +23,11 @@
 
 			var cell2 = row.insertCell(1);
 			cell2.style.backgroundColor = "white"
-			var element2 = document.createTextNode("Random Notifications");
+			var element2 = document.createTextNode(message);
 			element2.type = "text";
 			element2.name = "txtbox[]";
 			cell2.appendChild(element2);
-			cell2.style.width = "330px";
+			
 
 		}
 
@@ -78,6 +78,15 @@
 			}
 		}
 
+		function createTable(){
+			for(var i=0, len=localStorage.length; i<len; i++) {
+				var key = localStorage.key(i);
+	   			string_key = String(key);
+	   			if (string_key.match('_')){
+	   				addRow(tableID, localStorage[key]);
+    			}
+    		}	
+		}
 	</SCRIPT>
 </HEAD>
 <BODY>
@@ -86,7 +95,7 @@
 		<TH style = "background-color:white" colspan = "2"> Recent Notifications </TH>
 			<TBODY>
 				<TR>
-					<TD></TD>
+					<TD onload = "createTable()"></TD>
 					<!-- <TD><INPUT type="checkbox" name="chk"/></TD>
 					
 					<TD> <INPUT type="text" /> </TD> -->
@@ -94,7 +103,7 @@
 			</TBODY>
 	</TABLE>
 
-	<INPUT type="button" value="Add Row" onclick="addRow('dataTable')" />
+<!-- 	<INPUT type="button" value="Add Row" onclick="addRow('dataTable')" /> -->
 
 	<INPUT type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
 
