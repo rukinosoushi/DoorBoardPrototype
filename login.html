@@ -9,7 +9,7 @@
 	<section id = "mockTablet">
 	  <section id= "IdentityVerification" style="padding-top:200px;text-align:center;">
 	    <h1 style = "color:#2AF946;">Enter your username to manage your message board</h1>
-	    <p>(Enter "egolub" or "mhicks")</p>
+	    <p>(Enter "egolub", "mhicks" or "femad")</p>
 	    <form>
 	    	<input id="username" type="text" defaultValue = "">
 	    	<button class="submitButton" type="submit" onclick="login()">Log in</button>
@@ -27,6 +27,11 @@
 			localStorage.setItem("currentUser", user);
 			window.location = "config_page.html";
 		}
+		if (user == "femad"){
+			localStorage.setItem("currentUser", user);
+			window.location = "config_page.html";
+		}
+
 		if (!user)
 			alert("Invalid user name!");
 		else alert("User name doesn't exist!");

@@ -164,13 +164,13 @@ body{
 	text-align: center;
 	border: 0;
 	transition: all 0.3s ease;
-	position:absolute;top:82%;
-	left:58%;border-radius:12px;
+	position:absolute;top: 450px;
+	left: 700px;border-radius:12px;
 }
 #switchPage{
 	position: absolute;
 	top: 405px;
-	right: 190px;
+	left: 910px;
 	height: 140px;
 	width: 100px;
 	text-align: center;
