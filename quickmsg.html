@@ -14,6 +14,38 @@
     localStorage.setItem(message_index, quick_msg.message.value);
     localStorage.messageNum = Number(localStorage.messageNum)+1
   }
+
+  function loadJson(file, callback){
+    var xobj = new XMLHttpRequest();
+    xobj.overrideMimeType("application/json");
+    xobj.open('GET', file, true);
+    xobj.onreadystatechange = function(){
+      if (xobj.readyState == 4 && xobj.status == "200"){
+        callback(xobj.responseText);
+      }
+    };
+    xobj.send(null);
+  }
+  function init(data){
+    if (localStorage.getItem(localStorage.getItem("currentBoard")) === null){
+      document.getElementById("pName").innerHTML = data.name;
+      document.getElementById("profilePhoto").style.backgroundImage = "url(" + data.photo + ")";
+      document.getElementById("roomNum").innerHTML = "Room "+ data.office;
+    } else {
+      var userData = JSON.parse(localStorage.getItem(localStorage.getItem("currentBoard")));
+      document.getElementById("pName").innerHTML = userData.pName;
+      document.getElementById("profilePhoto").style.backgroundImage = "url(" + userData.pPhoto + ")";
+      document.getElementById("roomNum").innerHTML = "Room "+ userData.office;
+    }
+  }
+  function restoreData(){
+    loadJson(localStorage.getItem("currentBoard") + ".json", function(response){
+      var json = JSON.parse(response);
+      init(json);
+    })
+  }
+  document.addEventListener("DOMContentLoaded", restoreData());
+
 </script>
 </head>  
 
@@ -21,32 +53,33 @@
 <form name="quick_msg" action="idverify.html" method = "">
   <section id = "mockTablet">
   	<section id = "banner">
-      <p>Room 4132 : Professor Name
-      <button style="float:right;padding:0;border:none;background:none;" type="button" onclick="window.location.href='index.html'">&#10060;</button>
-      </p>
+    <p id = "roomNum" style = "color:#f22; font-size: 30px"></p>
+    <p id = "pName"></p>     
+    <button style= "position: absolute;top: 30px;left: 1000px;" type="button" onclick="window.location.href='index.html'">&#10060;</button>
+    </p>
     </section>
    	<section id = "underBanner">
-    	<div class="imageDiv" style = "background-image: url(Professor.jpg);"> </div>
+    	<div id = "profilePhoto" class="imageDiv" style = "background-image: url(Professor.jpg);"> </div>
     	<section id = "textbox">
-        <textarea name="message" style="font-size:44px;" rows="6" cols="28" placeholder="Pick phrases to make your message."></textarea>
+        <textarea name="message" style="font-size:30px; resize: none" rows="8" cols="40" placeholder="Pick phrases to make your message."></textarea>
       </section>
     	<section id= "presetPhrase">
         <h4><b>Phrases you can use</b></h4>
         <ul>
-          <li><input id="hello" style="font-size:30px;" type="button" value="Hello! This is a " onclick="add(this.id)">
-          <input id="131" style="font-size:30px;" type="button" value="CMSC131 " onclick="add(this.id)">
-          <input id="216" style="font-size:30px;" type="button" value="CMSC216 " onclick="add(this.id)">
-          <input id="351" style="font-size:30px;" type="button" value="CMSC351 " onclick="add(this.id)">
-          <input id="434" style="font-size:30px;" type="button" value="CMSC434 " onclick="add(this.id)">
-          <input id="student" style="font-size:30px;" type="button" value="Student!" onclick="add(this.id)">
-          <li><input id="meeting" style="font-size:30px;" type="button" value="I scheduled a meeting with you today but you are not here. Please reply me to schedule another meeting." onclick="add(this.id)">
-          <li><input id="absence" style="font-size:30px;" type="button" value="I am sorry that I was absent for today's lecture. Documents of excuse have been droped to your mailbox." onclick="add(this.id)">
-          <li><input id="drop" style="font-size:30px;" type="button" value="Documents you required have been dropped to your mailbox." onclick="add(this.id)">
-          <li><input id="reply" style="font-size:30px;" type="button" value="Please contact me through my email address ASAP for a emergent matter!" onclick="add(this.id)">
+          <li><input id="hello" style="font-size:20px;" type="button" value="Hello! This is a " onclick="add(this.id)">
+          <input id="131" style="font-size:20px;" type="button" value="CMSC131 " onclick="add(this.id)">
+          <input id="216" style="font-size:20px;" type="button" value="CMSC216 " onclick="add(this.id)">
+          <input id="351" style="font-size:20px;" type="button" value="CMSC351 " onclick="add(this.id)">
+          <input id="434" style="font-size:20px;" type="button" value="CMSC434 " onclick="add(this.id)">
+          <input id="student" style="font-size:20px;" type="button" value="Student!" onclick="add(this.id)">
+          <li><input id="meeting" style="font-size:20px;" type="button" value="I scheduled a meeting with you today but you are not here. Please reply me to schedule another meeting." onclick="add(this.id)">
+          <li><input id="absence" style="font-size:20px;" type="button" value="I am sorry that I was absent for today's lecture. Documents of excuse have been droped to your mailbox." onclick="add(this.id)">
+          <li><input id="drop" style="font-size:20px;" type="button" value="Documents you required have been dropped to your mailbox." onclick="add(this.id)">
+          <li><input id="reply" style="font-size:20px;" type="button" value="Please contact me through my email address ASAP for a emergent matter!" onclick="add(this.id)">
         </ul>
 
         <input style="background:#EF0F0B;color:#fff;font-family:Sans-serif;font-size:20px;text-align:center;border:0;transition:all 0.3s ease;border-radius:12px;" type="reset" value="Reset">
-        <button class="submitButton" type="submit" onclick= "submit()">Send</button>
+        <button class="submitButton2" style = " background: #428BCA;color: #fff;font-family: Sans-serif;font-size: 20px;height: 60px;width: 150px;line-height: 60px;margin: 25px 25px;text-align: center;border: 0;transition: all 0.3s ease;position:absolute;top: 650px;left: 800px;border-radius:12px;" type="submit" onclick= "submit()">Send</button>
     	</section>
         
     	</section>

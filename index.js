@@ -18,6 +18,14 @@ function init(data){
 		document.getElementById("pPhone").innerHTML = data.phone;
 		document.getElementById("profilePhoto").style.backgroundImage = "url(" + data.photo + ")";
 		document.getElementById("roomNum").innerHTML = "Room "+ data.office;
+		if (localStorage.getItem("currentBoard") == "egolub"){
+			document.getElementById("otherP").innerHTML = "Michael Hicks";
+		} else if (localStorage.getItem("currentBoard") == "mhicks"){
+			document.getElementById("otherP").innerHTML = "Evan Golub";
+		}else{
+			document.getElementById("switchPage").style.display = "none";
+		}
+
 	} else {
 		var userData = JSON.parse(localStorage.getItem(localStorage.getItem("currentBoard")));
 		console.log(userData);
@@ -26,11 +34,14 @@ function init(data){
 		document.getElementById("pPhone").innerHTML = userData.pPhone;
 		document.getElementById("profilePhoto").style.backgroundImage = "url(" + userData.pPhoto + ")";
 		document.getElementById("roomNum").innerHTML = "Room "+ userData.office;
-	}
-	if (localStorage.getItem("currentBoard") == "egolub"){
-		document.getElementById("otherP").innerHTML = JSON.parse(localStorage.getItem("mhicks")).pName;
-	} else {
-		document.getElementById("otherP").innerHTML = JSON.parse(localStorage.getItem("egolub")).pName;
+
+		if (localStorage.getItem("currentBoard") == "egolub"){
+			document.getElementById("otherP").innerHTML = JSON.parse(localStorage.getItem("mhicks")).pName;
+		} else if (localStorage.getItem("currentBoard") == "mhicks"){
+			document.getElementById("otherP").innerHTML = JSON.parse(localStorage.getItem("egolub")).pName;
+		}else{
+			document.getElementById("switchPage").style.display = "none";
+		}
 	}
 }
 
@@ -49,7 +60,7 @@ function backBoard(){
 
 function switchPage(){
 	if (localStorage.getItem("currentBoard") == "egolub") localStorage.setItem("currentBoard", "mhicks");
-	else localStorage.setItem("currentBoard", "egolub");
+	else if (localStorage.getItem("currentBoard") == "mhicks") localStorage.setItem("currentBoard", "egolub");
 	restoreData();
 }
 document.getElementById("backBoard").onclick = function(){backBoard()};

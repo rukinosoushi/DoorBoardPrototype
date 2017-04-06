@@ -9,7 +9,7 @@
 	<section id = "mockTablet">
 	  <section id= "IdentityVerification" style="padding-top:200px;text-align:center;">
 	    <h1 style = "color:#2AF946;">Enter your username to show your message board</h1>
-	    <p>(Enter "egolub" or "mhicks")</p>
+	    <p>(Enter "egolub", "mhicks" or "femad")</p>
 	    <form>
 	    	<input id="username" type="text" defaultValue = "">
 	    	<button class="submitButton" type="submit" onclick="login()">Log in</button>
@@ -24,6 +24,10 @@
 			window.location = "index.html";
 		}
 		if (user == "mhicks"){
+			localStorage.setItem("currentBoard", user);
+			window.location = "index.html";
+		}
+		if (user == "femad"){
 			localStorage.setItem("currentBoard", user);
 			window.location = "index.html";
 		}
