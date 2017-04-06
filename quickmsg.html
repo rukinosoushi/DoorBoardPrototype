@@ -9,10 +9,13 @@
    quick_msg.message.value = quick_msg.message.value+document.getElementById(elementID).value;
   }
   function submit(){
+
+    /*This is the right way to usualyl do it, but for now, I am sending it as 1 string. super hacky
     var message_num = localStorage.getItem("messageNum");
     var message_index = "message_" + message_num;
     localStorage.setItem(message_index, quick_msg.message.value);
     localStorage.messageNum = Number(localStorage.messageNum)+1
+    */
   }
 
   function loadJson(file, callback){
@@ -27,6 +30,7 @@
     xobj.send(null);
   }
   function init(data){
+    localStorage.setItem("quickMSG", "");
     if (localStorage.getItem(localStorage.getItem("currentBoard")) === null){
       document.getElementById("pName").innerHTML = data.name;
       document.getElementById("profilePhoto").style.backgroundImage = "url(" + data.photo + ")";
@@ -61,7 +65,7 @@
    	<section id = "underBanner">
     	<div id = "profilePhoto" class="imageDiv" style = "background-image: url(Professor.jpg);"> </div>
     	<section id = "textbox">
-        <textarea name="message" style="font-size:30px; resize: none" rows="8" cols="40" placeholder="Pick phrases to make your message."></textarea>
+        <textarea id="messageText" name="message" style="font-size:30px; resize: none" rows="8" cols="40" placeholder="Pick phrases to make your message."></textarea>
       </section>
     	<section id= "presetPhrase">
         <h4><b>Phrases you can use</b></h4>
@@ -79,12 +83,31 @@
         </ul>
 
         <input style="background:#EF0F0B;color:#fff;font-family:Sans-serif;font-size:20px;text-align:center;border:0;transition:all 0.3s ease;border-radius:12px;" type="reset" value="Reset">
-        <button class="submitButton2" style = " background: #428BCA;color: #fff;font-family: Sans-serif;font-size: 20px;height: 60px;width: 150px;line-height: 60px;margin: 25px 25px;text-align: center;border: 0;transition: all 0.3s ease;position:absolute;top: 650px;left: 800px;border-radius:12px;" type="submit" onclick= "submit()">Send</button>
+        <button class="submitButton2" id="qckSubmit" style = " background: #428BCA;color: #fff;font-family: Sans-serif;font-size: 20px;height: 60px;width: 150px;line-height: 60px;margin: 25px 25px;text-align: center;border: 0;transition: all 0.3s ease;position:absolute;top: 650px;left: 800px;border-radius:12px;" type="submit" onclick= "submit()">Send</button>
     	</section>
         
     	</section>
   </section>
-</form>
 
+</form>
+<!--this script allows to send full strings to the notfications -->
+<script>
+  
+  document.getElementById('qckSubmit').addEventListener('click', function (e) {
+    console.log("EVENT DETECTED!!!!");
+        //var event = document.getElementById('addEvent').value;
+       // myEventList.add(event);
+        //incrementer += "cs students want to meet on " + logStart +" to "+ logEnd+"\<br\>";
+        if(localStorage.getItem("quickMSG") != null){
+          localStorage.setItem("quickMSG", localStorage.getItem("quickMSG") + document.getElementById("messageText").value+"\<br\>");
+        }
+        else{
+          localStorage.setItem("quickMSG", document.getElementById("messageText").value+"\<br\>");
+        }
+        alert("inside bottom "+localStorage.getItem("quickMSG"));
+        //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+        //incrementer += 1;
+}, false);
+</script>
 </body>
 </html>

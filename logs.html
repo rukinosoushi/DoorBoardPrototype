@@ -110,8 +110,10 @@
   </section>
 </BODY>
 <script>
+// im so sorry, ill fix lastname syntax later. for now, it refers to scheduling 
+	var currentLogs = localStorage.getItem("lastname")
 	console.log(localStorage.getItem("lastname"));
-	document.getElementById("results").innerHTML = localStorage.getItem("lastname");
+	document.getElementById("results").innerHTML = localStorage.getItem("lastname")+localStorage.getItem("quickMSG");
 </script>
 </HTML>
 
