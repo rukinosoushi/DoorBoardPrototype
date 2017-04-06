@@ -71,7 +71,7 @@ var add_minutes =  function (dt, minutes) {
 
 //dont want to flood the calendar
   function createEvente() {
-    /*var today = new Date();
+    var today = new Date();
     var later = add_minutes(today,30);
 
 
@@ -98,7 +98,7 @@ var add_minutes =  function (dt, minutes) {
     request.execute(function(resp) {
       console.log(resp);
       alert("Your event was added to the calendar.");
-    });*/
+    });
   }
 
   </script>
@@ -108,21 +108,29 @@ var add_minutes =  function (dt, minutes) {
 
 <!--CURRENTLY DID NOT TAKE INTO account overlapping times. this is a prototype-->
 <body>
- <section id = "banner"><p style = "color:#f22; font-size: 30px">Room 4132</p></section>
+<section id = "mockTablet">
+
+ <section id = "banner">
+    <p id = "roomNum" style = "color:#f22; font-size: 30px"></p>
+    <p id = "pName"></p>     
+    <button style= "position: absolute;top: 30px;left: 990px;" type="button" onclick="window.location.href='../index.html'">&#10060;</button>
+    <p style = "color:#f22; font-size: 30px">Room 4132</p></section>
   <section id = "underBanner">
   <div id="eventBinder">
-  <button id="btnCreateEvents" class="btn btn-primary" onclick="createEvente();">Create Event</button> 
+  <form name="quick_msg" action="../idverify.html" method = "">
+  <button id="btnCreateEvents" class="btn btn-primary" type = "subtmit" onclick="createEvente();">Create Event</button> 
+  </form>
   </div>
 
-		<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=0ouj56vsdv2h2bu9ree86op3kc%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FNew_York" style="border-width:0" width="600" height="300" frameborder="0" scrolling="no"></iframe>
+		<iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=0ouj56vsdv2h2bu9ree86op3kc%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="300" frameborder="0" scrolling="no"></iframe>
 	<button id="authorize-button" style="visibility: hidden">Login &amp; Authorize</button>
 
      <!-- debuging purposes <div class="row marketing">    
       <div id="datePickerDates1"></div>-->
 
-<section id="scheduleLayout">
+<section id="scheduleLayout" style = "margin-left: 130px;">
           <div class = "timeSlot" id="datePicker1"></div>
-          <p style = "font-size: 30px; float: left; padding-top: 50px; padding-right: 30px;">TO</p>
+          <p style = "font-size: 30px; float: left; padding-top: 50px; padding-right: 60px;">TO</p>
           <div class = "timeSlot" id="datePicker2"></div>
 </section>
      <!-- ebuging purposes<div class="row marketing">
@@ -158,6 +166,7 @@ var add_minutes =  function (dt, minutes) {
 
 
 <script type="text/javascript" src="../logIO.js"></script>
+  </section>
   </section>
 
 </body>
