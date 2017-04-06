@@ -27,6 +27,11 @@ function init(data){
 		document.getElementById("profilePhoto").style.backgroundImage = "url(" + userData.pPhoto + ")";
 		document.getElementById("roomNum").innerHTML = "Room "+ userData.office;
 	}
+	if (localStorage.getItem("currentBoard") == "egolub"){
+		document.getElementById("otherP").innerHTML = JSON.parse(localStorage.getItem("mhicks")).pName;
+	} else {
+		document.getElementById("otherP").innerHTML = JSON.parse(localStorage.getItem("egolub")).pName;
+	}
 }
 
 
@@ -42,5 +47,11 @@ function backBoard(){
 	window.location.replace("board.html");
 }
 
+function switchPage(){
+	if (localStorage.getItem("currentBoard") == "egolub") localStorage.setItem("currentBoard", "mhicks");
+	else localStorage.setItem("currentBoard", "egolub");
+	restoreData();
+}
 document.getElementById("backBoard").onclick = function(){backBoard()};
 document.addEventListener("DOMContentLoaded", restoreData());
+document.getElementById("switchPage").onclick = function(){switchPage()}
