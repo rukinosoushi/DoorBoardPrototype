@@ -1,6 +1,9 @@
 //SPAGHETTi!
 var start;
 var end;
+var logStart;
+var logEnd;
+
 var MtrDatepicker1 = (function() {
 
 	var datepickers = [];
@@ -34,6 +37,7 @@ var MtrDatepicker1 = (function() {
 
 		//resultElement.innerHTML = datepicker.format('YYYY-MM-DD HH:mm');
 		start = datepicker.toISOString();
+		logStart = datepicker.format('M-DD HH:mm');
 	}
 
 	return {init: init};
@@ -74,6 +78,7 @@ var MtrDatepicker2 = (function() {
 
 		//resultElement.innerHTML = datepicker.format('YYYY-MM-DD HH:mm');
 		end = datepicker.toISOString();
+		logEnd = datepicker.format('M-DD HH:mm');
 	}
 
 	return {init: init};

@@ -1,9 +1,12 @@
 <HTML>
 <HEAD>
 <link href="style.css" rel="stylesheet" type="text/css">
+<link rel= "stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta http-equiv="refresh" content="3"> 
+
 <!-- Not sure how to include style properly -->
 	<TITLE> Log Table </TITLE>
-	<SCRIPT language="javascript">
+	<!--<SCRIPT language="javascript">
 		function addRow(tableID, message) {
 			/*Going to add another parameter to dynamically change what the notification says*/
 
@@ -87,27 +90,29 @@
     			}
     		}	
 		}
-	</SCRIPT>
+	</SCRIPT>-->
 </HEAD>
 <BODY>
-
-	<TABLE id="dataTable" width="350px" border="1">
-		<TH style = "background-color:white" colspan = "2"> Recent Notifications </TH>
-			<TBODY>
-				<TR>
-					<TD onload = "createTable()"></TD>
-					<!-- <TD><INPUT type="checkbox" name="chk"/></TD>
-					
-					<TD> <INPUT type="text" /> </TD> -->
-				</TR>
-			</TBODY>
-	</TABLE>
-
-<!-- 	<INPUT type="button" value="Add Row" onclick="addRow('dataTable')" /> -->
-
-	<INPUT type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
-
-	<INPUT type="button" value="Delete All" onclick="deleteAll('dataTable')" />
-
+<section id = "mockTablet">
+  <section id = "banner"><p id = "roomNum" style = "color:#f22; font-size: 30px">CMSC434</p>
+  <a href="config_page.html" class="button" style = "color:#f22; background-color: #999; font-size: 25px; ">Back</a>
+  
+  </section>
+  <br>
+  <section id = "underBanner" >
+  <h1 style="margin-bottom: 10px">Notifications and Events</h1>
+    <div class="imageDiv" id = "profilePhoto"></div>
+    
+	<p id="results" style = "color: #000"></p>
+      
+    </section>
+    </span>
+  </section>
 </BODY>
+<script>
+	console.log(localStorage.getItem("lastname"));
+	document.getElementById("results").innerHTML = localStorage.getItem("lastname");
+</script>
 </HTML>
+
+	<p id="results" style = "color: #000"></p>
