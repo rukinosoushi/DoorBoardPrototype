@@ -11,42 +11,58 @@ function loadJson(file, callback){
 }
 
 function init(data){
-	if (localStorage.getItem("pName") === null){
+	//cant find current user's data, read from files instead and load it into local storage
+	if (localStorage.getItem(localStorage.getItem("currentBoard")) === null){
 		document.getElementById("pName").innerHTML = data.name;
-	} else {
-		document.getElementById("pName").innerHTML = localStorage.getItem("pName");
-	}
-	if (localStorage.getItem("pMail") === null){
 		document.getElementById("pMail").innerHTML = data.email;
-	} else {
-		document.getElementById("pMail").innerHTML = localStorage.getItem("pMail");
-	}
-	if (localStorage.getItem("pPhone") === null){
 		document.getElementById("pPhone").innerHTML = data.phone;
-	} else {
-		document.getElementById("pPhone").innerHTML = localStorage.getItem("pPhone");
-	}
-
-	if (localStorage.getItem("pPhoto") === null){
 		document.getElementById("profilePhoto").style.backgroundImage = "url(" + data.photo + ")";
-	} else {
-		document.getElementById("profilePhoto").style.backgroundImage = "url(" + localStorage.getItem("pPhoto") + ")";
-	}
+		document.getElementById("roomNum").innerHTML = "Room "+ data.office;
+		if (localStorage.getItem("currentBoard") == "egolub"){
+			document.getElementById("otherP").innerHTML = "Michael Hicks";
+		} else if (localStorage.getItem("currentBoard") == "mhicks"){
+			document.getElementById("otherP").innerHTML = "Evan Golub";
+		}else{
+			document.getElementById("switchPage").style.display = "none";
+		}
 
-	if (localStorage.getItem("messageNum") === null){
-        localStorage.setItem("messageNum", 1);
-      }
+	} else {
+		var userData = JSON.parse(localStorage.getItem(localStorage.getItem("currentBoard")));
+		console.log(userData);
+		document.getElementById("pName").innerHTML = userData.pName;
+		document.getElementById("pMail").innerHTML = userData.pMail;
+		document.getElementById("pPhone").innerHTML = userData.pPhone;
+		document.getElementById("profilePhoto").style.backgroundImage = "url(" + userData.pPhoto + ")";
+		document.getElementById("roomNum").innerHTML = "Room "+ userData.office;
+
+		if (localStorage.getItem("currentBoard") == "egolub"){
+			document.getElementById("otherP").innerHTML = JSON.parse(localStorage.getItem("mhicks")).pName;
+		} else if (localStorage.getItem("currentBoard") == "mhicks"){
+			document.getElementById("otherP").innerHTML = JSON.parse(localStorage.getItem("egolub")).pName;
+		}else{
+			document.getElementById("switchPage").style.display = "none";
+		}
+	}
 }
 
 
 function restoreData(){
-	loadJson("1115.json", function(response){
+	loadJson(localStorage.getItem("currentBoard") + ".json", function(response){
 		var json = JSON.parse(response);
 	init(json);
 	})
 }
 
+function backBoard(){
+	localStorage.removeItem("currentBoard");
+	window.location.replace("board.html");
+}
 
-
-
-document.addEventListener("DOMContentLoaded", restoreData);
+function switchPage(){
+	if (localStorage.getItem("currentBoard") == "egolub") localStorage.setItem("currentBoard", "mhicks");
+	else if (localStorage.getItem("currentBoard") == "mhicks") localStorage.setItem("currentBoard", "egolub");
+	restoreData();
+}
+document.getElementById("backBoard").onclick = function(){backBoard()};
+document.addEventListener("DOMContentLoaded", restoreData());
+document.getElementById("switchPage").onclick = function(){switchPage()}

@@ -72,6 +72,8 @@ body{
 }
 #below span:hover{
 	background-color: #333;
+	cursor: pointer;
+
 }
 
 #belowUnclickable{
@@ -127,9 +129,16 @@ body{
 }
 .toolbar span:hover{
 	background-color: #000;
+	cursor: pointer;
 }
 .toolbar span:hover .tooltiptext{
 	visibility: visible;
+}
+
+#backBoard{
+	position: absolute;
+	top: 30px;
+	left: 1017px;
 }
 
 /*method of centering cropped images provided by stack overflow*/
@@ -155,9 +164,41 @@ body{
 	text-align: center;
 	border: 0;
 	transition: all 0.3s ease;
-	position:absolute;top:82%;
-	left:58%;border-radius:12px;
+	position:absolute;top: 450px;
+	left: 700px;border-radius:12px;
 }
+#switchPage{
+	position: absolute;
+	top: 405px;
+	left: 910px;
+	height: 140px;
+	width: 100px;
+	text-align: center;
+	background-color: #99c2ff;
+}
+#switchPage #otherP{
+	text-align: center;
+	position: absolute;
+	top: 70px;
+	height: 34px;
+	width: 100px;
+}
+#switchPage:hover{
+	background-color: #3385ff;
+	cursor: pointer;
+}
+#scheduleSection{
+	float:left;
+}
+.timeSlot{
+	float:left;
+	margin-right:50px;
+}
+#btnCreateEvents{
 
+	float:left;
+	padding: 5px;
+	margin-right: 5px;
+}
 @media (max-width : 1024px ){
 }
