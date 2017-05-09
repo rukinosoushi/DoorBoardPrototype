@@ -5,14 +5,18 @@
 <title>Log in</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-	<section id = "mockTablet">
+<body style="background-color: #ccc;">
+	<section>
 	  <section id= "IdentityVerification" style="padding-top:200px;text-align:center;">
-	    <h1 style = "color:#2AF946;">Enter your username to manage your message board</h1>
-	    <p>(Enter "egolub", "mhicks" or "femad")</p>
+	    <h1 style = "color:#e33;">Enter your username to manage your message board</h1>
+	    <p>(Enter "egolub", "mhicks" or "femad" for username)</p>
 	    <form>
-	    	<input id="username" type="text" defaultValue = "">
-	    	<button class="submitButton" type="submit" onclick="login()">Log in</button>
+	    	<p>UserName: </p> <input id="username" type="text" defaultValue = "">
+	    	<br>
+	    	<p>Password: </p> <input id="password" type="text" defaultValue = "">
+	    	<br>
+	    	<BR>
+	    	<button  style="height:40px" type="submit" onclick="login()">Log in</button>
 	    </form>
 	  </section>
 	</section>
