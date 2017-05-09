@@ -14,6 +14,8 @@ function init(data){
 	document.getElementById("pPhoto").value = null;
 
 	//cant find current user's data, read from files instead and load it into local storage
+	document.getElementById("currentNote").innerHTML = data.notice;
+
 	if (localStorage.getItem(localStorage.getItem("currentUser")) === null){
 		document.getElementById("pName").value = data.name;
 		document.getElementById("pMail").value = data.email;

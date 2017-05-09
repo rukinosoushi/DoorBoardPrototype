@@ -12,6 +12,8 @@ function loadJson(file, callback){
 
 function init(data){
 	//cant find current user's data, read from files instead and load it into local storage
+	document.getElementById("currentNote").innerHTML = data.notice;
+
 	if (localStorage.getItem(localStorage.getItem("currentBoard")) === null){
 		document.getElementById("pName").innerHTML = data.name;
 		document.getElementById("pMail").innerHTML = data.email;
