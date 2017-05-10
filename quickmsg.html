@@ -11,12 +11,20 @@
   }
   function submit(){
 
-    /*This is the right way to usualyl do it, but for now, I am sending it as 1 string. super hacky
+    /*This is the right way to usually do it, but for now, I am sending it as 1 string. super hacky
     var message_num = localStorage.getItem("messageNum");
     var message_index = "message_" + message_num;
     localStorage.setItem(message_index, quick_msg.message.value);
     localStorage.messageNum = Number(localStorage.messageNum)+1
     */
+  }
+
+  function check(){
+    if(quick_msg.messageText.value == ""){
+      alert("Please input your message.");
+      quick_msg.messageText.focus();
+      return false;
+    }
   }
 
   function loadJson(file, callback){
@@ -84,7 +92,7 @@
         </ul>
 
         <input style="position: absolute;background:#EF0F0B;color:#fff;font-family:Sans-serif;font-size:40px;text-align:center;border:0;transition:all 0.3s ease;border-radius:12px;width:200px; height: 80px;top:630px;left:500px;margin: 25px 25px;" type="reset" value="Reset">
-        <button class="submitButton2" id="qckSubmit" style = "background: #428BCA;color: #fff;font-family: Sans-serif;font-size: 40px;height: 80px;width: 200px;line-height: 60px;margin: 25px 25px;text-align: center;border: 0;transition: all 0.3s ease;position:absolute;top: 630px;left: 750px;border-radius:12px;" type="submit" onclick= "submit()">Send</button>
+        <button class="submitButton2" id="qckSubmit" style = "background: #428BCA;color: #fff;font-family: Sans-serif;font-size: 40px;height: 80px;width: 200px;line-height: 60px;margin: 25px 25px;text-align: center;border: 0;transition: all 0.3s ease;position:absolute;top: 630px;left: 750px;border-radius:12px;" type="submit" onclick= "return check()">Send</button>
     	</section>
         
     	</section>
@@ -105,7 +113,7 @@
         else{
           localStorage.setItem("quickMSG", document.getElementById("messageText").value+"\<br\>");
         }
-        alert("inside bottom "+localStorage.getItem("quickMSG"));
+        // alert("inside bottom "+localStorage.getItem("quickMSG"));
         //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
         //incrementer += 1;
 }, false);
