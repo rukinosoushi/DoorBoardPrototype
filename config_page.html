@@ -6,55 +6,68 @@
 <link href="style.css" rel="stylesheet" type="text/css">
 <link rel= "stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<style>
 
-<body>
-<section id = "mockTablet">
-	<section id = "banner"><p id = "roomNum"></p></section>
- 	<section id = "underBanner">
-  	<div class="imageDiv" id= "profilePhoto"> </div>
-  	<iframe id="calendar" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23c0c0c0&amp;src=0ouj56vsdv2h2bu9ree86op3kc%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FNew_York" style="border-width:0" width="600" height="300" frameborder="0" scrolling="no"></iframe>
-  </section>
-  <label id = "photoSetting" style = "font-size: 13px">Change photo<input type = "file" id = "pPhoto" accept = "image/*"></label><br>
-   	<div id = "infoSetting">
-  		<form>
-  			<lable>Name:<input type = "text" id = "pName"></lable><br>
-  			<lable>Phone:<input type = "text" id = "pPhone"></lable><br>
-  			<lable>E-mail:<input type = "text" id = "pMail"></lable><br>
+#leftFormDiv{
+	margin-top: 85px;
+	margin-left: 30px;
+}
+#topOptionBarContainer{ 
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #555;
+}
+li{	
+	float:left;
+	color:#fff;
+	padding-top: 10px;
+    padding-left: 50px;
+    padding-right:50px;
+}
+li span {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    height: 35px;
+}
+li:hover{
+	cursor: pointer;
+    background-color: #222;
+}
+</style>
+<body style="background-color: #ccc;">
+<section>
+	<section id = "banner"><center  style="font-size: 30px; color:#e33; padding-top: 10px;" >Configure your doorboard</center></section>
+ <ul id="topOptionBarContainer">
+  <li id ="preview"><span>Preview Changes</span></li>
+  <li id ="save"><span>Save Changes</span></li>
+  <li id="reset"><span>Reset Settings</span></li>
+  <li id="message"><span>Recieved Messages</span></li>
+  <li id="logout"><span>Log Out</span></li>
+</ul>
+  	<iframe id="calendar" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=600&amp;wkst=1&amp;bgcolor=%23c0c0c0&amp;src=0ouj56vsdv2h2bu9ree86op3kc%40group.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FNew_York" style="border-width:0; margin-right: 30px; margin-top: 85px;" width="800" height="700" frameborder="0" scrolling="no"></iframe>
+
+   	<div id = "leftFormDiv">
+
+ 	<!--<label id = "photoSetting" style = "font-size: 13px">Change photo<input type = "file" id = "pPhoto" accept = "image/*"></label><br>-->
+  		<form> 
+
+		  	<div id= "profilePhoto"><img src="mhicks.jpg"> </div>
+		  	<label style = "font-size: 13px">Change photo<input type = "file" id = "pPhoto" accept = "image/*"></label>
+		  	<h1>Name:</h1>
+		  			<label><input type = "text" id = "pName" value="Michael Hicks"></label><br>
+		  	<h1>Phone:</h1>
+		  			<label><input type = "text" id = "pPhone" value="301-405-2710"></label><br>
+		  	<h1>Email:</h1>
+		  			<label><input type = "text" id = "pMail" value="mwh@cs.umd.edu"></label><br>
+		  	<h1>Notification message:</h1>
+  					<textarea rows="6" cols="60" value = "Hello, today, I am stuck in bad traffic, I won't be able to show up to office in the next hour. Sorry for the inconvenience."></textarea><br>
   		</form>
   	</div>
 
-    <section id="belowUnclickable">
-      <span id = "scheduleButton">
-        <p>Schedule a meeting</p>
-      </span>
-      <span id = "quickMsgButton">
-        <p>Create Message</p>
-      </span>
-    </section>
-
-  	<section id= "currentMessage">
-  	<h1>Notice:</h1>
-  		<p id = "currentNote"></p>
-  	</section>
 </section>
-<div class = "toolbar" id = "configBar">
-	<span id = "save">		
-		<p class = "tooltiptext">Save changes</p>
-		<i class = "fa fa-save"></i>
-	</span>
-	<span id = "reset">
-		<p class = "tooltiptext">Reset</p>
-		<i class = "fa fa-refresh"></i>
-	</span>
-	<span id = "message" onclick = "window.location.href='logs.html'">
-		<p class = "tooltiptext">Messages</p>
-		<i class = "fa fa-commenting-o"></i>
-	</span>
-  <span id = "logout">
-    <p class = "tooltiptext">Log out</p>
-    <i class = "fa fa-power-off"></i>
-  </span>
-</div>
 <script src="config_page.js"></script>
 </body>
 </html>

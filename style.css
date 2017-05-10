@@ -10,27 +10,25 @@ body{
 #currentMessage{
 	font-family: "Arial Black", Gadget, sans-serif;
 	position: absolute;
-	width: 930px;
-	top: 550px;
-	left: 50px;
-	height: 180px;
+	width: 350px;
+	top: 460px;
+	left: 20px;
+	height: 280px;
 	background-color: #fff;
-	padding: 13px;
 }
 #currentMessage h1{
 	position: absolute;
 	top:-30px;
-	left: 20px;
+	left: 10px;
 	color:#f22; 
-	font-size: 30px;
+	font-size: 25px;
 }
 #currentMessage p{
 	position: absolute;
-	top: 30px;
-	left: 20px;
+	left: 10px;
 	text-indent: 5em;
-	font-size: 25px;
-	width: 920px;
+	font-size: 21px;
+	width: 330px;
 
 }
 #banner{
@@ -66,9 +64,9 @@ body{
 #info{
 	font-size: 25px;
 	position: absolute;
-	top: 420px;
+	top: 340px;
 	left: 20px;
-	width: 250px;
+	width: 350px;
 	text-align: center;
 }
 #infoSetting{
@@ -85,19 +83,19 @@ body{
 
 #below{
 	position: absolute;
-	top: 420px;
-	left: 270px;
+	top: 680px;
+	left: 420px;
 }
 #below span{
 	border-radius: 25px;
 	float: left;
-	margin-left: 25px;
+	margin-left: 50px;
 	display: block;
 	text-align: center;
-	padding: 5px;
 	color: white;
 	font-size: 25px;
 	background-color: #333;
+	width: 230px;
 }
 #below span p{
 	font-family: "Comic Sans MS", cursive, sans-serif;
@@ -126,6 +124,13 @@ body{
 }
 #belowUnclickable span p{
 	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#shoutout{
+	position: absolute;
+	top: 75px;
+	left: 380px;
+	width: 650px;
+	height: 600px;
 }
 .toolbar{
 	position: fixed;
@@ -172,18 +177,21 @@ body{
 
 #backBoard{
 	position: absolute;
-	top: 30px;
-	left: 1017px;
+	top: 0px;
+	left: 1200px;
 }
 
 /*method of centering cropped images provided by stack overflow*/
 .imageDiv {
-  width: 230px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   background-position: center center;
   background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
-  float:left;
+  position: absolute;
+  left: 70px;
+  top: 75px;
 }
 
 /*a button style provided by bootstrapbay.com*/
@@ -205,18 +213,14 @@ body{
 	border-radius:12px;
 }
 #switchPage{
-	border-radius: 25px;
 	position: absolute;
-	top: 405px;
-	left: 770px;
-	height: 130px;
-	width: 240px;
+	top: 310px;
+	left: -140px;
 	text-align: center;
-	background-color: #333;
 }
 #switchPage i{
 	position: absolute; 
-	color: #FFF; 
+	color: #333; 
 	top: 25px; 
 	left: 160px; 
 }
@@ -241,7 +245,6 @@ body{
 	color: #FFF;
 }
 #switchPage:hover{
-	background-color: #000;
 	cursor: pointer;
 }
 #scheduleSection{

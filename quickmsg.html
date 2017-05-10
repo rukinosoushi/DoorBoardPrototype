@@ -72,11 +72,11 @@
     </p>
     </section>
    	<section id = "underBanner">
-    	<div id = "profilePhoto" class="imageDiv" style = "background-image: url(Professor.jpg);"> </div>
-    	<section id = "textbox">
-        <textarea id="messageText" name="message" style="font-size:30px; resize: none" rows="8" cols="40" placeholder="Pick phrases to make your message."></textarea>
+    	<div id = "profilePhoto" class="imageDiv" style = "position: absolute; top: 100px; left: 50px; background-image: url(Professor.jpg);"> </div>
+    	<section id = "textbox" style = "position: absolute;top: 100px; left: 330px;">
+        <textarea id="messageText" name="message" style="font-size:30px; resize: none" rows="8" cols="37" placeholder="Pick phrases to make your message."></textarea>
       </section>
-    	<section id= "presetPhrase">
+    	<section id= "presetPhrase" style="position: absolute; top: 400px;">
         <h4><b>Phrases you can use</b></h4>
         <ul>
           <li><input id="hello" style="font-size:20px;" type="button" value="Hello! This is a " onclick="add(this.id)">
@@ -91,8 +91,8 @@
           <li><input id="reply" style="font-size:20px;" type="button" value="Please contact me through my email address ASAP for a emergent matter!" onclick="add(this.id)">
         </ul>
 
-        <input style="position: absolute;background:#EF0F0B;color:#fff;font-family:Sans-serif;font-size:40px;text-align:center;border:0;transition:all 0.3s ease;border-radius:12px;width:200px; height: 80px;top:630px;left:500px;margin: 25px 25px;" type="reset" value="Reset">
-        <button class="submitButton2" id="qckSubmit" style = "background: #428BCA;color: #fff;font-family: Sans-serif;font-size: 40px;height: 80px;width: 200px;line-height: 60px;margin: 25px 25px;text-align: center;border: 0;transition: all 0.3s ease;position:absolute;top: 630px;left: 750px;border-radius:12px;" type="submit" onclick= "return check()">Send</button>
+        <input style="position: absolute;background:#EF0F0B;color:#fff;font-family:Sans-serif;font-size:40px;text-align:center;border:0;transition:all 0.3s ease;border-radius:12px;width:200px; height: 80px;top:250px;left:500px;margin: 25px 25px;" type="reset" value="Reset">
+        <button class="submitButton2" id="qckSubmit" style = "background: #428BCA;color: #fff;font-family: Sans-serif;font-size: 40px;height: 80px;width: 200px;line-height: 60px;margin: 25px 25px;text-align: center;border: 0;transition: all 0.3s ease;position:absolute;top: 250px;left: 750px;border-radius:12px;" type="submit" onclick= "return check()">Send</button>
     	</section>
         
     	</section>
